@@ -1,4 +1,4 @@
-package neacron.thymeleaf;
+package neacron.thymeleaf.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

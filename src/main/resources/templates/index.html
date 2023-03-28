@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style type="text/css">
+        * {
+            font-family: Times New Roman;
+            font-weight: 900;
+        }
+
+        .head {
+            justify-content: center;
+        }
+
+        .shoppingList {
+            width: 550px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table {
+            width: 550px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        td {
+            word-wrap: break-word;
+        }
+
+        td p {
+            overflow-wrap: break-word;
+            width: 300px;
+            padding-left: 1%;
+        }
+    </style>
+</head>
+<div width="100%" style="margin:0;padding:0!important;background-color:#f1f1f1">
+    <center style="width:100%;background-color:#f1f1f1">
+        <div style="display:none;font-size:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;font-family:sans-serif">
+        </div>
+        <div style="max-width:600px;margin:0 auto">
+            <div class="head">
+                <p style="font-size:30px;margin-left:auto;margin-right:auto">Отмена заказа<br></p>
+                <p style="font-size:20px;margin-left:auto;margin-right:auto">Список покупок к отмене:</p>
+            </div>
+            <hr>
+            <div class="shoppingList">
+                <div>
+                    <table align="center">
+                        <tbody>
+                        <tr th:each="item : ${items}">
+                            <td width="30%" style="padding-left:20px" th:text="${item.name ?: 'No such element'}"></td>
+
+                            <td width="60%"></td>
+                            <td width="30%" align="center" th:text="${item.date ?: 'No such element'}"></td>
+
+                            <td align="center"><img th:src="${item.image}" alt="No such images" style="width:100px;height:100px"></td>
+
+                            <td width="300px"><p th:text="${item.description ?: 'No such element'}"></p></td>
+
+                            <td align="center" th:text="${item.price ?: 'No such element'}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+        </div>
+    </center>
+</div>
+</html>
